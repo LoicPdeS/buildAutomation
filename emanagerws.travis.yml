@@ -1,9 +1,13 @@
 ---
 defaultName: EManagerWS
 
-#Language
+# Language
 language: java
-
+jdk:
+  - oraclejdk8
+  
+sudo: false # faster builds  
+  
 # Logging settings.
 logging:
 
