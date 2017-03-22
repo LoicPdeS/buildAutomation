@@ -1,25 +1,3 @@
----
-defaultName: EManagerWS
-
-# Language
 language: java
 jdk:
-  - oraclejdk8
-  
-sudo: false # faster builds  
-  
-# Logging settings.
-logging:
-
-  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
-  level: INFO
-
-server:
-  type: simple
-  applicationContextPath: /
-  adminContextPath: /admin
-  connector:
-    type: http
-    port: 9090
-    bindHost: localhost
-
+- oraclejdk8
