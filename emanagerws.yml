@@ -1,6 +1,9 @@
 ---
 defaultName: EManagerWS
 
+#Language
+language: java
+
 # Logging settings.
 logging:
 
