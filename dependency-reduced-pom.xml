@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>tracker</groupId>
-  <artifactId>tracker-engine</artifactId>
+  <groupId>fr.imie.emanagerws</groupId>
+  <artifactId>emanagerws</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <scm>
+    <connection>scm:git:https://github.com/stidiovip/emanagerws.git</connection>
+  </scm>
   <build>
     <plugins>
+      <plugin>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.5.2</version>
+      </plugin>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>
         <version>2.3</version>
@@ -19,7 +26,7 @@
               <transformers>
                 <transformer />
                 <transformer>
-                  <mainClass>noovop.tracker.TrackerApplication</mainClass>
+                  <mainClass>fr.imie.emanagerws.App</mainClass>
                 </transformer>
               </transformers>
             </configuration>
@@ -50,16 +57,19 @@
           </archive>
         </configuration>
       </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
-  <repositories>
-    <repository>
-      <id>maven-repo</id>
-      <url>http://mvnrepository.com/</url>
-    </repository>
-  </repositories>
   <properties>
-    <dropwizard.version>0.9.0</dropwizard.version>
+    <dropwizard.version>0.7.0</dropwizard.version>
+    <dropwizard.configurable.version>0.2.1</dropwizard.configurable.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 </project>
 

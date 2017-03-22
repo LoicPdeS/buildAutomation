@@ -37,7 +37,7 @@ public class Service {
      * @return
      */
 	public List<Contact> getContacts() {
-		return new ArrayList<>(contacts);
+		return new ArrayList<Contact>(contacts);
 	}
     
 	/**

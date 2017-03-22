@@ -2,9 +2,7 @@ package fr.imie.emanagerws.service;
 
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-
-import static org.junit.Assert.*;
-
+import static org.assertj.core.api.Assertions.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
@@ -24,8 +22,8 @@ public class ServiceTest {
 	public void shouldGetContactById (){
 		Contact contact = service.findContactById(2);
 		
-		assertNotNull(contact);
-		assertTrue("The id should be equal to 2", contact.getId() == 2);
+		assertThat(contact.getId()).isNotNull(); 
+		assertThat(service.findContactById(2)).isEqualTo(contact);
 	}
 	
 	@Test
@@ -36,12 +34,12 @@ public class ServiceTest {
 		contact.setPhone("040506060");
 		
 		contact = service.addContact(contact);
-		
-		assertTrue(contact.getId() > 0);
+
+		assertThat(contact.getId() > 0).isTrue();
 		
 		Contact addedContact = service.findContactById(contact.getId());
 		
-		assertEquals(addedContact, contact);
+		assertThat(addedContact).isEqualTo(contact);
 	}
 	
 	@Test
@@ -53,7 +51,7 @@ public class ServiceTest {
 		service.deleteContact(contact);
 		
 		// assert it's null ( no more existing )
-		assertNull(service.findContactById(1));
+		assertThat(service.findContactById(1)).isNull();
 	}
 	
 	@After
